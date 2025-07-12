@@ -1,0 +1,48 @@
+Default settings for VM are NAT
+-NAT can access the LAN it gives each virtual machine its own network for example
+-Network 1: 10.0.1.0/24 
+-Network 2: 10.0.2.0/24
+-Network 3: 10.0.3.0/24
+
+NAT Network
+-Give access to internet but meshes all the virtual boxes into one network
+
+Bridged
+-access to the internet it connects your VMs act as real machines meaning it will be on the same network as your host machine
+
+Host-Only Network
+-No internet access nor will it have access to lan
+
+Internal Network
+- puts the virtual machines into there own network and they will not have access to the lan
+
+Not attached
+-Network adapter is not attached
+
+Next is setting up the virtual machines to stay safe while testing malware
+-Went into settings on Vitrual Box into network settings and assigned both VMS to internal network under "MyTest"
+
+Setting up network in windows 
+-Right click on the network
+-scoll down to change network adapter options
+-right click ethernet go to properties
+-click internet protocol version 4 (TCP/IPv4)
+-click use the following IP addresses
+- IP address 192.168.20.10
+-go to cmd 
+-type in ipconfig
+
+Setting up linux machine
+-right click on ethernet icon 
+-wired connection
+-hit gear icon in the bottom left
+-then hit method manual 
+-type in address 192.168.20.11
+-leave netmask as 24
+-then open terminal and type in ifconfig
+
+Pinging the VMs
+-First ping was from kali to windows didnt work as windows firewall wasnt letting any inbound traffic
+-Now pinging from the Windows to kali it was connected
+-took a snapshot of both VMs
+
